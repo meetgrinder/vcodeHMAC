@@ -26,6 +26,7 @@ func getCredentials(fileString string, profile string) ([2]string, error) {
         if len(line) == 0 || line[0] == '#' {
             // skip empty lines or lines starting with '#'
             continue
+        }
 
         if line == profileLine {
             foundProfile = true

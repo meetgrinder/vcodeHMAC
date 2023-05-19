@@ -3,7 +3,7 @@ package vcodeHMAC
 
 // GenerateAuthHeader takes the location of your credentials file, the HTTP Method, and URL and returns the header value to be used for Authorization
 func GenerateAuthHeader(credsFile, httpMethod, url string) (string, error) {
-	credentials, err := getCredentials(credsFile, 'default')
+	credentials, err := getCredentials(credsFile, "default")
 	if err != nil {
 		return "", err
 	}
