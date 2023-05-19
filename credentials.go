@@ -37,7 +37,6 @@ func getCredentials(fileString string, profile string) ([2]string, error) {
         if foundProfile == false {
             continue
         }
-        
 
 		//We remove spaces to account for discrepancies in user configuration of creds file
 		if strings.Contains(scanner.Text(), "veracode_api_key_id") {
