@@ -8,7 +8,7 @@ import (
 
 func getCredentials(fileString string, profile string) ([2]string, error) {
 	var credentials [2]string
-    profileLine := '[' + profile + ']'
+    profileLine := "[" + profile + "]"
     foundProfile := false
     foundKey := false
     foundSecret := false
