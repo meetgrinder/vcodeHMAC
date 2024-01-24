@@ -26,6 +26,9 @@ func getHost(urlString string) (string, error) {
 	}
 
 	host, _, err := net.SplitHostPort(u.Host)
+	if err != nil {
+		return "", err
+	}
 	return host, nil
 }
 
