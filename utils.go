@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"fmt"
+	"net"
 	"net/url"
 	"time"
 )
@@ -24,7 +25,11 @@ func getHost(urlString string) (string, error) {
 		return "", err
 	}
 
-	return u.Host, nil
+	host, _, err := net.SplitHostPort(u.Host)
+	if err != nil {
+		return "", err
+	}
+	return host, nil
 }
 
 func getPathParams(urlString string) (string, error) {
