@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net"
 	"net/url"
+	"strings"
 	"time"
 )
 
@@ -25,7 +26,12 @@ func getHost(urlString string) (string, error) {
 		return "", err
 	}
 
+	if !strings.Contains(u.Host, ":") {
+		return u.Host, nil
+	}
+
 	host, _, err := net.SplitHostPort(u.Host)
+
 	if err != nil {
 		return "", err
 	}
